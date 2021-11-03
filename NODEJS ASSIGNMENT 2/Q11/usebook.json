@@ -1,0 +1,30 @@
+{
+    "cust":
+      [  
+        {
+           "name" : "WINGS OF FIRE" , 
+           "id" : "148",
+           "price" : "500 RS",
+           "author" : "S.K.DAS" 
+        },
+ 
+        {
+            "name" : "HARRY POTTER" , 
+            "id" : "836",
+            "price" : "500 RS",
+            "author" : "P.L.STERLING" 
+         },
+ 
+         {
+            "name" : "LEVITATION" , 
+            "id" : "469",
+            "price" : "500 RS",
+            "author" : "V.M.LEE" 
+         }
+ 
+     
+ 
+     
+      ]
+    
+ }

@@ -1,0 +1,35 @@
+
+<html>
+ <head>
+ 
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> </script>
+   
+   <script>
+     function f1(){
+     $(document).ready(function()
+         {
+            $("ul li[value=1]").prepend("&nbsp;1.");
+            $("ul li[value=2]").prepend("&nbsp;2.");
+            $("ul li[value=3]").prepend("&nbsp;3.");
+         });
+   }
+   
+ </script>
+   
+ </head>
+ 
+ <body>
+    <div>
+     <h1> THIS IS HEADER </h1>
+     <ul>
+     <li value="1">Apple
+     <li value="2">Kiwi
+     <li value="3">Strawberry
+     </ul>
+     
+    </div>
+     <input type="button" onclick="f1()" value="Run">
+       
+ 
+ </body>
+</html>

@@ -1,0 +1,104 @@
+<html>
+
+  <head>
+
+      <script>
+        
+       
+         function payment()
+         {
+             var amount=parseInt(document.getElementById("amt").value);
+             var roi=parseInt(document.getElementById("rate").value);
+             var repay=parseInt(document.getElementById("pay").value);
+             if(amount<1500000 || (repay<7 || repay>15))
+             {
+               if(amount<1500000)
+                 alert("AMOUNT CANNOT BE <THAN 1500000"); 
+               else
+                 alert("REPAYMENT PERIOD YEARS SHOULD BE BETWEEN 7 & 15 YEARS");
+             }
+             
+             else
+               {
+                 var p=amount/[[(1+roi)^repay]-1]/(roi*(1+roi)^repay);
+                 document.getElementById("newamt").value=p;
+                 
+                 var i=(amount*roi)/12;
+                 document.getElementById("inpay").value=i;
+                 
+                 document.getElementById("total").value=(p*12*repay+i);
+               }
+             
+            
+         }  
+         
+         function loanamount()
+         {
+             var amo=parseInt(document.getElementById("amt").value);
+             if( amo<1500000)
+                {
+                    alert("AMOUNT CANNOT BE <THAN 1500000");
+                    document.getElementById("amt").focus();
+                    document.getElementById("amt").select();
+           //       return false;
+                }
+           //  return true;
+         }
+         
+         function period()
+         {
+             var repay=parseInt(document.getElementById("pay").value);
+             if( repay<7 || repay>15)
+                {
+                    alert("REPAYMENT PERIOD YEARS SHOULD BE BETWEEN 7 & 15 YEARS");
+                    document.getElementById("pay").focus();
+                    document.getElementById("pay").select();
+                 // return false;
+                }
+             //return true;
+         }
+         /*
+         function loan()
+         {
+            if(loanamount() || period())
+               return true;
+            else
+               return false;
+         }
+         */
+         
+        
+      </script>
+      <style>
+         .button
+         {
+            background-color: grey ;
+            color:white;
+            font-size: 25px;
+         }
+         </style>
+
+  </head>
+
+  <body>
+     
+    <div> <center>
+     <table width="50%">    
+      <h1><b>Enter Loan Information </b> </h1>
+      <tr> <td>1) Amount of loan (Any currency): </td> <td> <input type="text" id="amt" name="amt" required onchange="loanamount()"> <br><br> </td>
+      <tr> <td>2) Annual Percentage rate of interest: </td> <td> <input type="text" id="rate" required name="rate"><br><br> </td>
+      <tr> <td>3) Repayment period in years: </td><td><input type="text" id="pay" name="pay" required onchange="period()"><br><br> </td>
+      <tr> <td><input type="button" value="compute" onclick="payment()" class="button"> &nbsp;&nbsp; <font size="6px"> <b>Payment Information: </b> </font></td>
+      <tr> <td>4) Your monthly payment will be: </td> <td> <input type="text" id="newamt" name="newamt" readonly><br><br></td>
+      <tr> <td>5) Your total payment will be: </td> <td> <input type="text" id="total" name="total" readonly><br><br></td>
+      <tr> <td>6) Your total interest payment will be: </td> <td> <input type="" id="inpay" name="inpay" readonly><br><br></td>
+     </table>
+    </center>
+   </div>
+    </form>
+    
+  
+
+  </body>
+
+</html>

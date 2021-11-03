@@ -1,0 +1,188 @@
+<html>
+        <head>
+            <script>
+            
+                function dateselect()
+                {
+                    var sel=document.getElementById("month");
+                    var a=sel.value;
+                    
+                    return a;
+                }
+                
+                function dayselect()
+                {
+                    var sel1=document.getElementById("day");
+                    var b=sel1.value;
+                    return b;
+                }
+
+                function yearselect()
+                {
+                    var sel2=document.getElementById("year");
+                    var c=sel2.value;
+                    return c;
+                }
+                function userobject()
+                {
+            
+                    var all=
+                    {
+                        name:document.getElementById("name").value,
+                        radio1:Genderselect(),
+                        month:dateselect(),
+                        day:dayselect(),
+                        year:yearselect(),
+                        food:foodselect(),
+                        email:document.getElementById("mail").value,
+                        lucky:document.getElementById("lucky").value
+                    };
+                    return all;
+                }
+                    function validname1()
+                    {
+                        var all=userobject();
+                        if(all.name== "^\d+$" || all.name.length==0)
+                        {
+                           alert("NAME SHOULD NOT BE NUMERICALS !!!");
+                           return false;
+                        }
+                        return true;
+                    }
+
+                    function validnamelength()
+                    {
+                        var all=userobject();
+                        if(all.name.length>10 || all.name.length==0)
+                        {
+                             alert("NAME SHOULD NOT BE MORE THAN 10 CHARACTERS !!!");
+                             return false;
+                        }
+                        return true;
+                    }
+
+                    function validlucky()
+                    {
+                        var all=userobject();
+                        if(all.lucky.length>4 || all.name.length==0)
+                        {
+                            alert("LUCKY NUMBERS SHOULD BE 4 DIGITS ONLY !!!");
+                            return false;
+                        }
+                        return true;
+                    }
+
+                    function validall()
+                        {
+                            var all=userobject();
+                            if(validlucky() && validname1() && validnamelength())
+                                 document.getElementById("display").innerHTML="NAME:"+all.name+"<br>"+"GENDER:"+all.radio1+"<br>"+"BIRTH DATE:"+
+                                 all.day+"/"+all.month+"/"+all.year+"<br>"+"FAVOURITE FOOD:"+all.food+
+                                 "<br>"+"EMAIL:"+all.email+"<br>"+"LUCKY NUMBER:"+all.lucky+"<br>"
+                            else 
+                                 document.write("INVALID DATA !!!");
+                        }
+                     
+                        
+                
+                function Genderselect()
+                 {
+                     var radio=document.getElementsByName("r1");
+                     for(i=0;i<radio.length;i++)
+                     {
+                         if(radio[i].checked)
+                             var a=radio[i].value;
+                     }
+                     return a;
+                 }
+                
+                 function foodselect()
+                 {
+                     var food=document.getElementsByName("m1");
+                     str=" ";
+                     for(i=0;i<food.length;i++)
+                     {
+                         if(food[i].checked)
+                            str=str+food[i].value+" ";
+                     }
+                     return str;
+                 }
+                   
+                
+                
+            </script>
+        </head>
+        <body>
+            <form onsubmit="validall()">
+            <table width="500px" height="300px">
+                
+                <tr><td> Name:</td><td><input type="text" id="name" name="name" required> </td></tr>
+                <tr><td> Birth date:</td><td>
+                <select id="month"  onchange="dateselect()" required>
+                    <script></script>
+                    <option value="jan">JANUARY</option>
+                    <option value="feb">FEBRUARY</option>
+                    <option value="mar">MARCH</option>
+                    <option value="apr">APRIL</option>
+                    <option value="may">MAY</option>
+                    <option value="jun">JUNE</option>
+                    <option value="jul">JULY</option>
+                    <option value="aug">AUGUST</option>
+                    <option value="sep">SEPTEMBER</option>
+                    <option value="oct">OCTOBER</option>
+                    <option value="nov">NOVEMBER</option>
+                    <option value="dec">DECEMBER</option>
+                </select>&nbsp;  
+                <select id="day" onchange="dayselect()" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+
+                </select>
+                <select id="year" onchange="yearselect()" required>
+                    <option value="1950">1950</option>
+                    <option value="1951">1951</option>
+                </select>
+                
+            </td></tr>
+            <tr><td> Email Address:</td><td><input type="email"required id="mail" name="mail"> </td></tr>
+            <tr><td>Gender</td><td>Male<input type="radio" name="r1" required value="male"><br>Female<input type="radio"name="r1" value="female" onchange="Genderselect()"></td></tr>   
+            <tr><td>Lucky Number</td><td><input type="number" name="lucky" required id="lucky"></td></tr>
+            <tr><td>Favourite Foods</td><td><input type="checkbox" value="pizza"name="m1" required>PIZZA<br><input type="checkbox" value="pasta" name="m1">PASTA<br><input type="checkbox" value="chinese"name="m1">CHINESE<br></td></tr>
+            
+            
+
+        </table>
+        <input  type="submit"><br><br>
+        <span id="display"></span>
+    </form>
+        </body>
+</html>

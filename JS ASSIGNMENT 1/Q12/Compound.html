@@ -1,0 +1,29 @@
+<html>
+<head>
+
+  <script>
+  function f1()
+  {
+    b=1;
+    
+    for(i=1;i<=n;i++)
+    {
+       a=b*(1+(r/100));
+       b=a;
+    }
+    ci=(p*b)-p;
+    document.write("COMPOUND INTERESET: "+ci);
+  }
+  //document.write("Hello world!");
+  </script>
+</head>
+  
+  <body>
+  <script>
+     var p=parseInt(prompt("ENTER PRINCIPLE: "));
+     var r=parseInt(prompt("ENTER RATE: "));
+     var n=parseInt(prompt("ENTER NO. OF YEARS: "));
+     f1();
+  </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+<head>
+
+  <script>
+  function f1(num)
+  {
+    sum=0;
+    i=1;
+    while(i<=num)
+    {
+      if((i%2)==0)
+      {
+       sum=sum+(i*i);
+       document.write(i+"<br>");
+      }
+      i++;
+    }
+    document.write("SUM OF SQUARES UPTO "+num+" is "+sum);
+  }
+  //document.write("Hello world!");
+  </script>
+</head>
+  
+  <body>
+  <script>
+     var num=parseInt(prompt("ENTER NUMBER:"));
+     f1(num);
+  </script>
+  </body>
+</html>

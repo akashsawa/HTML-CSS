@@ -1,0 +1,51 @@
+<html>
+
+  <head>
+
+    <script>
+        function Employee(empid,name,salary)
+        {
+            this.empid=empid;
+            this.ename=name;
+            this.salary=salary;
+           
+        }
+        var arr=[];
+          var num=parseInt(prompt("ENTER TOTAL NUMBER OF EMPLOYEES"));
+          for(i=0;i<num;i++)
+          {
+              var b=parseInt(prompt("ENTER EMPLOYEE ID: "));
+              var c=prompt("ENTER EMPLOYEE NAME: ");
+              var d=parseFloat(prompt("ENTER EMPLOYEE SALARY: "));
+              var a=new Employee(b,c,d);
+              arr[i]=a;
+              
+          }
+          
+          //document.write();
+          
+          var str="<table border='2px' > <tr> <th> EMPLOYEE ID </th> <th>EMPLOYEE NAME </th> <th> EMPLOYEE SALARY </th></tr>";
+          //document.write(str);
+          
+          for(i=0;i<num;i++)
+          {
+              //document.write(arr[i].empid+arr[i].ename);
+              str=str+"<tr><td>"+arr[i].empid+"</td><td>"+arr[i].ename+"</td><td>"+arr[i].salary+"</td></tr>";
+             
+          }
+          document.write(str);
+          //var str="</table>"
+         
+          
+        
+      </script>
+      
+   
+  
+     
+       
+       
+       
+</head>
+ 
+</html>

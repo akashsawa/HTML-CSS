@@ -1,0 +1,43 @@
+<html>
+
+  <head>
+
+      <script>
+         
+         function f1()
+         {
+            var n=document.getElementById("r1").value; 
+            if(n<1 || n>=1000)
+            {
+               alert("Entered Number is out of Range");
+            }
+            var sum1=0;
+            while(n)
+            {
+             sum1 += n % 10;
+             n = Math.floor(n / 10);
+            }
+            document.getElementById("s1").innerHTML=sum1;
+            
+                
+            
+            
+         } 
+      </script>
+
+
+  </head>
+
+  <body>
+    <form>
+     Enter positive integer less than 1000 <input type="text" id="r1" name="r1"><br><br>
+     <input type="button" value="Enter" onclick="f1()" ><br><br>
+     <span id="s1"></span>
+     
+    </form>
+   
+  
+
+  </body>
+
+</html>

@@ -1,0 +1,38 @@
+<html>
+
+  <head>
+
+      <script>
+
+
+
+      </script>
+
+
+  </head>
+
+  <body>
+
+    <script>
+         
+         var date=new Date();
+        // document.write(date);    
+         var day=date.getDay(); 
+         var month=date.getMonth(); 
+         var days=["Sunday","Monday","Tuesday","Wednesday"];
+         var months=["January","February","March","April","May","June"];
+         document.write("Today is "+days[day]+", "+date.getDate()+" "+months[month]+" "+date.getFullYear()+" welcome, and good afternoon to you"+"<br>");         
+         //document.write(date.valueOf(date.getDate()));
+        //document.write(); 
+         var date1=new Date(2021,11,31);
+         var oneday=1000*60*60*24;
+        // document.write(date1);
+         var curdate=Math.ceil((date1.valueOf()-date.valueOf())/oneday);
+         document.write("<h1>Number of days left till end of year: </h1>"+curdate);
+         
+    </script>
+
+
+  </body>
+
+</html>

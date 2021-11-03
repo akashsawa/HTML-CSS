@@ -1,0 +1,51 @@
+<html>
+
+  <head>
+
+      <script>
+        
+        function table()
+        {
+            var a=parseInt(document.getElementById("t1").value);
+            var b=parseInt(document.getElementById("t2").value);
+            var c=parseInt(document.getElementById("t3").value);
+            var res=" ";
+            for(i=a;i<=b;i++)
+            {            
+                res=res+"\n"+c+" * "+i+" = "+(c*i);
+               
+            }
+             document.getElementById("t4").value = res;
+        }
+        
+        function cle()
+        {
+            document.getElementById("t4").value=" ";
+        }
+       
+      </script>
+
+      
+
+  </head>
+
+  <body>
+
+    <form>
+    <hr height="200px">
+    <br><br>
+     <fieldset> <legend>Table Calculator </legend>
+      <center>
+        Start Number:<input type="text" id="t1" name="t1" required> &nbsp;&nbsp;
+        End Number: <input type="text" id="t2" name="t2" required> &nbsp;&nbsp;
+        Multiply By: <input type="text" id="t3" name="t3" required> &nbsp;&nbsp; <br><br>
+        <input type="submit" value="Times Table" onclick="table()"><br><br>
+        <input type="submit" value="Reset" onclick="cle()"><br><br>
+        <textarea rows="10" cols="40" id="t4" name="t4"> </textarea>
+       </center>
+      </fieldset>
+    </form>
+
+  </body>
+
+</html>

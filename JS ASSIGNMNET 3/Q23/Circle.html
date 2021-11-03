@@ -1,0 +1,32 @@
+
+<html>
+
+  <head>
+
+      <script>
+        
+        function area()
+        {
+           var rad=parseInt(document.getElementById("r1").value);
+           document.getElementById("s1").innerHTML= "Area: "+ Math.ceil((Math.PI*rad*rad))+"<br><br>Circumeference: "+Math.ceil(Math.PI*2*rad);
+           
+        }
+        
+       
+      </script>
+
+
+  </head>
+
+  <body>
+
+    <form>
+        Enter Radius: <input type="text" id="r1" name="r2"> <br><br>
+        <input type="button" value="Display" id="r2" name="r2" onclick="area()"> <br><br>
+        <span id="s1"> </span>
+      
+    </form>
+
+  </body>
+
+</html>

@@ -1,0 +1,53 @@
+<html>
+
+  <head>
+
+      <script>
+ 
+      function getWeekDay()
+      {
+          var day=date.getDay();
+          // document.write(day);
+          switch (day)
+          {
+             case 0:return "SU";  
+             case 1:return "MON";  
+             case 2:return "TU";  
+             case 3:return "WE";                    
+                    
+             case 4:return "THU";   
+             case 5:return "FR";  
+             case 6:return "SAT";                     
+                  
+          }
+          
+      }
+ 
+      function getDate()
+      {
+          var d=parseInt(prompt("ENTER DAY: "));
+          var m=parseInt(prompt("ENTER MONTH: "));
+          var y=parseInt(prompt("ENTER YEAR: "));
+          var date=new Date(y,(m-1),d);
+          return date;
+      }
+      </script>
+
+
+  </head>
+
+  <body>
+
+    <script>
+         
+         //var date=new Date();
+         //alert("HI");
+         var date=getDate();
+         alert(getWeekDay(date));
+         
+    </script>
+
+
+  </body>
+
+</html>

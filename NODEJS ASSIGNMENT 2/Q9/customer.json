@@ -1,0 +1,30 @@
+{
+   "cust":
+     [  
+       {
+          "name" : "akash" , 
+          "addr" : "maharashtra",
+          "ph" : "12345",
+          "credit" : "456" 
+       },
+
+       {
+        "name" : "sagar" , 
+        "addr" : "kashmir",
+        "ph" : "14587",
+        "credit" : "759" 
+       },
+
+       {
+        "name" : "pranay" , 
+        "addr" : "punjab",
+        "ph" : "47996",
+        "credit" : "703" 
+       }
+
+    
+
+    
+     ]
+   
+}

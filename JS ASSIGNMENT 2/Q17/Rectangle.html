@@ -1,0 +1,74 @@
+<html>
+
+  <head>
+
+      <script>
+          
+         function Rectangle(length,width)   //Rectangle object {user defined}
+         {
+            this.length=length;
+            this.width=width; 
+            this.displayrect=displayr;
+            this.arearect=arear;
+            this.perirect=perir;
+         }         
+         function displayr()
+         {
+            document.write(this.length+" "+this.width+"<br>");
+         }
+          
+         function arear()
+         {
+            document.write("AREA OF RECTANGLE: "+this.length*this.width+"<br>");
+         }
+        
+         function perir()
+         {
+            document.write("PERIMETER OF RECTANGLE: "+(this.length+this.width)+"<br>" );
+         }
+      
+         function Circle(rad)
+         {
+            this.rad=rad;
+            this.discircle=displaycircle;
+            this.areacir=areacircle;
+            this.perimetercir=pericircle;
+         }  
+    
+         function displaycircle()
+         {
+            document.write(this.rad+"<br>");
+         } 
+         function areacircle()
+         {
+            document.write("AREA OF CIRCLE:  "+Math.ceil(Math.PI*this.rad*this.rad)+"<br>");
+         }         
+         function pericircle()
+         {
+            document.write("CIRCUMFERENCE OF CIRCLE:  "+Math.ceil(Math.PI*2*this.rad)+"<br>");
+         }
+      </script>
+
+
+  </head>
+
+  <body>
+
+    <script>
+         var r=new Rectangle(10,20);
+         
+         r.displayrect();
+         r.arearect();
+         r.perirect();
+         
+         var c=new Circle(30);
+         
+         c.discircle();
+         c.areacir();
+         c.perimetercir();
+    </script>
+
+
+  </body>
+
+</html>

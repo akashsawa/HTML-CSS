@@ -1,0 +1,164 @@
+
+
+<html>
+    <head>
+
+        <style>
+            .p1
+            {
+                color: red;
+                background-color: aquamarine;
+            }
+        </style>
+
+       <script>
+           var obj = null;
+        function vEmail(){
+	        var rg = /^\w+[@]\w+[\.][c,o,m]{3}$/i;
+	        var mail = document.getElementById("text3").value;
+	        if(rg.test(mail)){
+		    return true;
+	     }
+     	else{
+	     	alert("ENTER VALID EMAIL !!!")
+	    	return false;
+    	}
+      }
+        
+        function confirmemail(){
+           var mail = document.getElementById("text3").value;
+            var cmail = document.getElementById("text4").value;
+            if(mail == cmail)
+            return true;
+            else{
+                alert("EMAIL DOESN'T MATCH !!!")
+	    	return false;
+            }
+        }
+
+        function cost(){
+            var stand = document.getElementById("Stand").value;
+            var cost = 0;
+            if(stand == "Platinum")
+                cost=25000;
+             
+            else if(stand == "North"){
+                if(document.getElementById("r1").checked)
+                cost=6000;
+                if(document.getElementById("r2").checked)
+                cost=2000;
+                
+            }
+            else if(stand == "East"){
+                if(document.getElementById("r1").checked)
+                cost=3000;
+                if(document.getElementById("r2").checked)
+                cost=1000;
+                
+            }
+			else if(stand == "Super"){
+				if(document.getElementById("r2").checked)
+                cost=20000;
+			}
+            document.getElementById("text5").value = cost 
+
+        }
+        
+        function validate(){
+            if(vEmail() && vConfirmEmail()){
+            alert("ALL DATA ENTERED CORRECTLY ")
+            obj = {
+                name:document.getElementById("text1").value,
+                email:document.getElementById("text3").value,
+                stand:document.getElementById("Stand").value,
+                Cost : document.getElementById("text5").value
+            }
+            }
+        }
+
+        function display()
+        {
+       	  var str = `<html><h3>********DETAILS**********</h3>NAME : ${obj.name}<br><br>Email : ${obj.email}<br><br>STAND : 
+             ${obj.stand} <br><br> FLOOR : `
+       	  if(document.getElementById("r1").checked)
+             {
+       	    	str += `First Floor<br>`;
+       	     }
+       	  else if(document.getElementById("r2").checked)
+             {
+       	    	str += `Second Floor<br>`
+       	     }
+          
+       	    var handler = window.open("","",'width=300,height=800');
+       	    handler.document.write(str);
+
+             
+       }
+       </script>
+		
+    </head>
+    <body>
+        <div >
+            <form>
+
+               <fieldset class="p1"><legend><h1> IPL TICKET BOOKING </h1> </legend>
+                <table size=200px>
+                    <tr>
+                        <td> <label>Spectator Name: </label></td>
+                        <td>
+                            <input type="text" id="text1" required>
+                        </td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td> <label>Email Id: </label></td>
+                        <td><input type="text" id="text3" required> </td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td> <label> Confirm Email Id: </label></td>
+                        <td><input type="text" id="text4" required onblur="confirmemail()"> </td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td> <label>Select Stand : </label></td>
+                        <td> 
+                            <select id="Stand">
+                                <option value="Platinum">PLATINUM GALLERY</option>
+                                <option value="North">NORTH WEST STAND</option>
+                                <option value="East">EAST STAND</option>
+					        	<option value = "Super"> SUPER HOSPITILITY STAND </option>
+                           </select> 
+                        </td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td> <label>SELECT FLOOR: </label></td>
+                        <td> 
+                             <input type="radio" id="r1" value="FFloor" name = r>First Floor
+                             <input type="radio" id="r2" value="SFloor" name = r>Second Floor
+                        </td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td><input type="button" id="btn1" value="CALCULATE TICKET COST:" onclick="cost()"></td> 
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td> <label> Cost of Ticket : </label></td>
+                         <td><input type="text" id="text5" readonly required> </td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td> <input type="button" id="btn2" value="DISPLAY BOOKING DETAILS:" onclick="display()">
+                             <input type="button" id="btn3" value="BOOK NOW:" onclick="validate()">
+                        </td>
+                    </tr>
+                    <tr></tr>
+                </table>
+            </fieldset>
+        </form>
+      </div>
+   
+    </body>
+</html>

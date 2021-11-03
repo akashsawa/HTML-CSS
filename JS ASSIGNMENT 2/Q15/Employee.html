@@ -1,0 +1,41 @@
+<html>
+
+  <head>
+
+      <script>
+        function getemp()
+        {
+            var arr=[];
+            for(i=1;i<=n;i++)
+            {
+             var m=prompt("ENTER EMPLOYEE NAME: ")
+             arr.push(m);
+            }
+            return arr;
+        }
+        
+      
+      </script>
+
+
+  </head>
+
+  <body>
+
+    <script>
+         var arr=[];
+         var n=parseInt(prompt("ENTER NUMBER OF EMPLOYEES: "));
+         var arr=getemp(n);
+         //delete arr[1];
+         //arr.pop(1);
+         
+         document.write("SORTED EMPLOYEE NAMES: "+arr.sort());
+         //document.write(arr);
+         //acceptEmp();
+         
+    </script>
+
+
+  </body>
+
+</html>

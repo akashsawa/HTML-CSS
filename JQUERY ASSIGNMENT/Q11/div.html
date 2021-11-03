@@ -1,0 +1,28 @@
+
+<html>
+ <head>
+ 
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> </script>
+   
+   <script>
+     function f1(){
+     $(document).ready(function()
+         {
+           alert($('.divclass').attr("id"));
+            
+         });
+   }
+   
+ </script>
+   
+ </head>
+ 
+ <body>
+    <div id="div1" class="divclass">THIS IS DIV 1</div>
+    <div id="div2">THIS IS DIV 2</div>
+    <div id="div3"> THIS IS DIV 3</div>
+    <input type="button" onclick="f1()" value="Run">
+       
+ 
+ </body>
+</html>

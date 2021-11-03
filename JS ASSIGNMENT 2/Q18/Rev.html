@@ -1,0 +1,39 @@
+<html>
+
+  <head>
+
+      <script>
+        function rev(arr)
+        {
+           var arr1=[];
+            for(i of arr)
+            {
+              
+                a=i.split("");
+                //document.write(a+"<br>");
+                b=a.reverse();
+                c=b.join("");
+                arr1.push(c);
+               
+            }
+           // arr1.join(" ");
+            document.write(arr1.sort());
+        }
+        
+        
+      </script>
+
+
+  </head>
+
+  <body>
+
+    <script>
+         var arr=["Zero" ,"One", "Two", "Three"];
+         rev(arr);
+    </script>
+
+
+  </body>
+
+</html>

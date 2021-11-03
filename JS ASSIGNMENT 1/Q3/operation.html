@@ -1,0 +1,36 @@
+<html>
+<head>
+
+  <script>
+  function f1()
+  {
+     switch (opr)
+     {
+        case "+": document.write("SUM OF: "+n1+"+"+n2+" is "+(n1+n2)); 
+                  break;        
+        case "/": document.write("DIVISION OF: "+n1+"/"+n2+" is "+(n1/n2)); 
+                  break;
+        case "*": document.write("MULTIPLICATION OF: "+n1+"*"+n2+" is "+(n1*n2));  
+                  break;
+        case "%": document.write("MODULUS OF: "+n1+"%"+n2+" is "+(n1%n2)); 
+                  break;        
+        case "-": document.write("SUBTRACTION OF: "+n1+"-"+n2+" is "+(n1-n2)); 
+                  break;        
+        default: document.write("NONE OUTCOMES IS CHOSEN");
+                 break;
+     }
+  }
+  //document.write("Hello world!");
+  </script>
+</head>
+  
+  <body>
+  <script>
+     
+     var n1= parseInt(prompt("ENTER NUMBER 1:"));
+     var n2=parseInt(prompt("ENTER NUMBER 2:"));
+     var opr=prompt("ENTER OPERATOR:");
+     f1(opr);
+  </script>
+  </body>
+</html>

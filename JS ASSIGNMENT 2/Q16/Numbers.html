@@ -1,0 +1,53 @@
+<html>
+
+  <head>
+
+      <script>
+          
+          function findnum()
+          {
+              for(i of arr)
+              {
+                 if(n==i)
+                    var flag=parseInt("1");
+                 else
+                    var flag=parseInt("0");                 
+              }
+              
+              if(flag==1)
+                   document.write("<br>"+"<h1>BINGO</h1>"+"<br>");
+              else
+                   document.write("<br>"+"TRY AGAIN");
+          }
+                    
+        
+        
+      
+      </script>
+
+
+  </head>
+
+  <body>
+
+    <script>
+    
+         var arr=[];
+         var n=parseInt(prompt("ENTER NUMBER TO BE SEARCHED BETWEEN 0 TO 50: "));
+         for(i=1;i<=5;i++)
+         {
+            arr.push((Math.floor(Math.random()*51)));
+         }
+         
+         for(o of arr)
+         {
+            document.write(o+"<br>");
+         }
+         findnum();
+         
+    </script>
+
+
+  </body>
+
+</html>

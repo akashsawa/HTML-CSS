@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script >
+        function f1(){
+		$(document).ready(function(){
+			document.write($("option[value='2']").html())
+		
+			
+		});
+        }
+	</script>
+</head>
+<body>
+	<select id="myselect">
+		<option value="1">Option-1</option>
+		<option value="2">Option-2</option>
+		<option value="3">Option-3</option>
+	</select>
+                    <input type="button" onclick="f1()" value="Run">
+
+</body>
+</html>

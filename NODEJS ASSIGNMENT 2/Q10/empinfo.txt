@@ -1,0 +1,5 @@
+id:1234:name:akash:dept:HR:designation:HR manager:salary:25000
+id:4598:name:sagar:dept:Tech:designation:Engineer:salary:45000
+
+
+

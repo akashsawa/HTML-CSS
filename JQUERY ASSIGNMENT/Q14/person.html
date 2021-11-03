@@ -1,0 +1,66 @@
+
+<html>
+ <head>
+ 
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> </script>
+   
+   <script>
+     function f1()
+     {
+     $(document).ready(function()
+         {
+            var arr=[];
+            var name=$("#name").val(); 
+            var age=$("#age").val();
+            var stat=$("#rad:checked ").val();
+            //var status=$("#name").val();
+            if(age<0)
+                  alert("INVALID AGE !");
+            else
+            {
+            var obj={  name:name, age:age ,stat:stat };
+            //var my=JSON.stringify(obj);
+            arr.push(obj);
+            arr.forEach(function(obj)
+            {
+               var a=JSON.stringify(obj.name);
+               var b=JSON.stringify(obj.age);
+               if(stat=="on")
+               {
+               var c="yes";
+               }
+               else
+               var c="No";
+               $("div table").append("<tr><td>"+a+"</td>"+"<td>"+b+"</td>"+"<td>"+c+"</td></tr>");
+            });
+         }
+         
+         });
+     }
+     
+          
+ </script>
+   
+ </head>
+ 
+ <body>
+     
+     <h1> THIS IS HEADER </h1>
+   
+     <div>
+       name:<input type="text" id="name"><br><br>
+       age:<input type="number" id="age"><br><br>
+       Employeed ?<input type="checkbox" id="rad"><br><br>
+    <div id="p1">
+       <table border="5px" width="50%">
+       <tr> <td><b>NAME</b></td> <td><b> AGE </b></td> <td><b> EMPLOYEED OR NOT ?</b><td> </td>  
+       </table>
+    </div>   
+     
+     </div> <br> <br> 
+    
+     <input type="button" onclick="f1()" value="Run">
+        
+ 
+ </body>
+</html>

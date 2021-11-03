@@ -1,0 +1,110 @@
+<html>
+
+
+<head>
+
+  <style>
+     
+     .nav
+     {
+         background-color: blue;
+padding-left: 34px;
+font-size: 21px;
+color: white;
+     }
+      .container
+      {
+           border: solid 5px;
+           width: 600px;
+           height: 603px;
+           padding: 10px 10px 10px 10px;
+      
+      }
+      
+      .alpha
+      {
+          color: blue;
+font-size: 17px;
+height: 52px;
+font-style: unset;
+      }
+      
+      
+      .bor
+      {
+        background-color: whitesmoke;
+      }
+     
+     #p1
+     {
+        text-align: center;
+        font-weight: bold;
+     }
+  
+     .m1
+     {
+     text-align: end;
+     
+     }
+     
+     #p
+     {
+        color: blue;
+     }
+     
+     
+  </style>
+
+</head>
+
+<body>
+   
+ 
+  <div class="container">
+   <h1 id="p1">Create Account </h1> <br>
+   <hr>
+   <table class="bor" width="600px">
+      
+      <tr> <td class="alpha" width="250px"> First Name <br> <input type="text" placeholder="Enter name" required autofocus> </td> <td  class="alpha" width="250px"> Last Name <br> <input type="text" placeholder="Enter name"></td>
+      <tr><td class="alpha"> Email <br><input type="email" placeholder="Enter Email" required></td>
+      <tr> <td  class="alpha"> Password <br><input type="password" placeholder="Enter password" required> </td> <td  class="alpha"> Confirm Password <br> <input type="text" placeholder="Enter name"></td>
+      <tr> <td class="alpha">Gender <br> 
+              <input type="radio" name="r1">Male &nbsp; 
+              <input type="radio" name="r1">Female &nbsp; 
+           </td> 
+           <td class="alpha"> Hobbies <br>
+              <input type="radio" name="r2">Music &nbsp; 
+              <input type="radio" name="r2">Sports&nbsp; 
+              <input type="radio" name="r2">Travel &nbsp; 
+              <input type="radio" name="r2">Movies&nbsp; 
+           </td>
+      <tr><td class="alpha"> Source of Income <br>
+               <select>
+                 <option> Employed </option>
+                 <option> Unemployed </option>
+                 <option> Retired </option>
+          </td>
+          <td class="alpha"> Income <br>
+               <input type="range" min="0" max="100000" step="5000" value="20000">
+          </td>
+      <tr> <td class="alpha"> Upload Profile Picture  <br>
+                 <input type="file">
+           </td>
+           <td class="alpha"> Age </br>
+                <input type="number">
+       
+    </table> 
+     
+      Bio <br>
+                 <textarea rows="5" cols="70">  </textarea>
+      <hr id="p">
+      <div class="m1">
+      <button class="nav"> Create</button>      
+      </div>           
+    
+  </div>    
+  
+
+</body>
+
+</html>

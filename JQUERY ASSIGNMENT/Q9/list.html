@@ -1,0 +1,33 @@
+
+<html>
+ <head>
+ 
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> </script>
+   
+   <script>
+     function f1(){
+     $(document).ready(function()
+         {
+            alert($("ul li:nth-child(2)").html());
+         });
+   }
+   
+ </script>
+   
+ </head>
+ 
+ <body>
+    <div>
+     <h1> THIS IS HEADER </h1>
+     <ul>
+     <li >Apple
+     <li>Kiwi
+     <li>Strawberry
+     </ul>
+     
+    </div>
+     <input type="button" onclick="f1()" value="Run">
+       
+ 
+ </body>
+</html>

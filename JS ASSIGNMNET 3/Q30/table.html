@@ -1,0 +1,88 @@
+<html>
+<head>
+    <script>
+        
+       function validdate()
+       {
+           var billdate=document.getElementById("date1").value;
+           var shipdate=document.getElementById("newdate").value;
+           var date1=new Date(billdate);
+           var date2=new Date(shipdate);
+           var newdate=parseInt((date1.getTime()-date2.getTime())/(1000*60*60*24));
+        
+           if(newdate>0)
+           {
+              document.getElementById("date").innerHTML="<span style=\color:RED\>" +"BILLING DATE MUST BE LESS THAN SHIPPING DATE !";
+              document.getElementById("date1").focus();
+              document.getElementById("date1").select();  
+              return -1;      
+           }
+           else
+             return 1;
+        }
+       function validname()
+       {
+        var name=document.getElementById("name1").value;
+            if(name.length<5)
+            {
+                document.getElementById("display").innerHTML="<span style=\color:RED\>" +"CHARACTERS CANNOT BE LESS THAN 5 CHARACTERS !!";
+                document.getElementById("name1").focus();
+                document.getElementById("name1").select();
+                return -1;
+            }
+            else return 1; 
+       }
+       
+       function userobject()
+       {
+           var obj=
+           {
+               id:document.getElementById("id1").value,
+               name:document.getElementById("name1").value,
+               bdate:document.getElementById("date1").value,
+               sdate:document.getElementById("newdate").value,
+               total:document.getElementById("tot").value
+           };
+           if(validname()>0)
+           {
+               if(validdate()<0)
+                    alert("ENTER CORRECT NAME !! OR ENTER CORRECT BILLING DATE"); 
+               else
+                {
+                var win=window.open(" "," ",height=300,width=300);
+                win.document.write("***************YOUR ORDER DETAILS *****************\n");
+                win.document.write("<table border=\2px\ width=\500px\height=\300px\><tr><td>"+" ORDER ID: "+"</td><td>"+obj.id+"</td></tr>");
+                win.document.write("<tr><td>"+" CUSTOMER NAME: "+"</td><td>"+obj.name+"</td></tr>");
+                win.document.write("<tr><td>"+" BILLING DATE: "+"</td><td>"+obj.bdate+"</td></tr>");
+                win.document.write("<tr><td>"+" SHIPPING DATE: "+"</td><td>"+obj.sdate+"</td></tr>");
+                win.document.write("<tr><td>"+" ORDER TOTAL: "+"</td><td>"+obj.total+"</td></tr></table>");
+                }
+            }
+            else
+                alert("ENTER PROPER NAME!!!");
+        }
+       
+    </script> 
+   
+   <style>
+       .f1
+       {
+           background-color: gray;
+       }
+   </style>
+</head>
+
+<body>
+  <form onsubmit="userobject()">
+    <div>
+    Order ID:<input type="text" id="id1" name="id1" required> <br> <br>
+    Cust. Name:<input type="text" id="name1" required onchange="validname()"> <span id="display"> </span> <br> <br>
+    Billing date:<input type="date" id="date1" name="date1" required> <br> <br>
+    Enter shipping date:<input type="date" id="newdate" name="newdate" required onchange="validdate()">  <span id="date"> </span><br> <br>
+    Order Total:<input type="text" id="tot" name="tot" required> <br> <br>
+    <input type="submit" class="f1"><br> <br>  
+   </div>
+   </form> 
+</body>
+
+</html>
